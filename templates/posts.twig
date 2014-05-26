@@ -1,0 +1,20 @@
+{% extends 'layouts/index.twig' %}
+
+{% block main %}
+    <section>
+        <h1>{{ page.title }}</h1>
+        {% for year_month, batched_articles in page.collection()|date_batch('published_on', 'F Y') %}
+            <section>
+                <h2><i class="glyphicon glyphicon-calendar"></i> {{ year_month }}</h2>
+                {% for articles in batched_articles %}
+                    <article itemscope itemtype="http://schema.org/BlogPosting">
+                        <header>
+                            <h3 itemprop="name"><a href="{{ url(articles.url) }}" itemprop="url">{{ articles.title }}</a></h3>
+                        </header>
+                        <p itemprop="description">{{ articles.summary }}</p>
+                    </article>
+                {% endfor %}
+            </section>
+        {% endfor %}
+    </section>
+{% endblock %}

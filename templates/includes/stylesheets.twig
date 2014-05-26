@@ -1,0 +1,6 @@
+{% for url in css %}
+    <link href="{{ url(url) }}" type="text/css" rel="stylesheet">
+{% endfor %}
+<style>
+    [itemprop="text"] img { max-width: 100%; }
+</style>

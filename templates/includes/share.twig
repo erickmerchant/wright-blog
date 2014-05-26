@@ -1,0 +1,9 @@
+<p class="share">
+    <span>Share with:</span>
+    &nbsp;
+    <a href="https://twitter.com/intent/tweet?url={{ host ~ url(page.url)|url_encode }}&amp;text={{ page.title|url_encode }}" rel="nofollow" target="_blank">Twitter</a>
+    &bull;
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;{{ "p[url]"|url_encode }}={{ host ~ url(page.url)|url_encode }}&amp;{{ "p[title]"|url_encode }}={{ page.title|url_encode }}" rel="nofollow" target="_blank">Facebook</a>
+    &bull;
+    <a href="http://plus.google.com/share?url={{ host ~ url(page.url)|url_encode }}" rel="nofollow" target="_blank">Google+</a>
+</p>

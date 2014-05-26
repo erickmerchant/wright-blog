@@ -1,0 +1,21 @@
+/:
+    data: posts
+    template: first-post
+/posts/:
+    data: posts
+    template: posts
+/posts/:slug/:
+    data: posts/*
+    template: post
+/tags/:
+    data: tags
+    template: tags
+/tags/:slug/:
+    data: tags/*
+    template: tag
+/404.html:
+    data: 404
+    template: 404
+/archive/:slug/:
+    data: archive/*
+    template: archived-post

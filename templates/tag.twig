@@ -1,0 +1,16 @@
+{% extends 'layouts/index.twig' %}
+
+{% block main %}
+    <section>
+        <h1><i class="glyphicon glyphicon-tag"></i> {{ page.title }}</h1>
+        <div>{{ page.content|content }}</div>
+        {% for article in page.related('posts') %}
+            <article itemscope itemtype="http://schema.org/BlogPosting">
+                <header>
+                    <h2 itemprop="name"><a href="{{ url(article.url) }}" itemprop="url">{{ article.title }}</a></h2>
+                </header>
+                <p itemprop="description">{{ article.summary }}</p>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

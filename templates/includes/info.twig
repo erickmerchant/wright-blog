@@ -1,0 +1,16 @@
+<p class="info">
+    <time itemprop="datePublished" datetime="{{ page.published_on|date("Y-m-d") }}"><i class="glyphicon glyphicon-calendar"></i> {{ page.published_on|date("F jS, Y") }}</time>
+    &nbsp;
+    {% if page.related('tags') %}
+        {% for tag in page.related('tags') %}
+            {% if tag.url is defined %}
+                <a href="{{ url(tag.url) }}" itemprop="articleSection"><i class="glyphicon glyphicon-tag"></i> {{ tag.title }}</a>
+            {% else %}
+                <span itemprop="articleSection"><i class="glyphicon glyphicon-tag"></i> {{ tag.title }}</span>
+            {% endif %}
+            {% if not loop.last %}
+                &nbsp;
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</p>

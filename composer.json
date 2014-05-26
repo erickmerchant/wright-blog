@@ -1,0 +1,17 @@
+{
+    "name": "erickmerchant/wright-skeleton",
+    "description": "a starting point for building a site using erickmerchant/wright",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erick Merchant",
+            "email": "erickmerchant@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "erickmerchant/wright": "dev-master",
+        "erusev/parsedown": "~1.0"
+    }
+}

@@ -1,0 +1,13 @@
+{% extends 'post.twig' %}
+
+{% block main %}
+    {% if page.collection() is not empty %}
+        {% set page = page.collection()|first %}
+        {{ parent() }}
+    {% else %}
+        <section>
+            <h1>No Posts Found</h1>
+            <p>No posts have been published yet.</p>
+        </section>
+    {% endif %}
+{% endblock %}

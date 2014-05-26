@@ -1,0 +1,104 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% if page.new_url is defined %}
+            <meta http-equiv="refresh" content="0; url={{ url(page.new_url) }}">
+            <link rel="canonical" href="{{ host ~ url(page.new_url) }}">
+        {% elseif page.url is defined %}
+            <link rel="canonical" href="{{ host ~ url(page.url) }}">
+        {% endif %}
+        <title>{{ page.title }}</title>
+        <meta name="description" content="{{ page.description }}">
+        <meta name="author" content="{{ author }}">
+        {% include 'includes/stylesheets.twig' %}
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="page-header">
+                <h1>
+                    {{ banner }}
+                    <br>
+                    <small>{{ sub_banner }}</small>
+                </h1>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <ul class="nav nav-pills">
+                        {% for link in menu %}
+                            <li><a{% if link.target %} target="{{ link.target }}"{% endif %} href="{{ url( link.url ) }}">{{ link.text }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-8">
+                    {% if page.new_url is defined %}
+                        <h1>Page Moved Permanently</h1>
+                        <p>Its new home is <a href="{{ url(page.new_url) }}">{{ url(page.new_url) }}</a></p>
+                    {% else %}
+                        {% block main %}
+                        {% endblock %}
+                    {% endif %}
+                    <br>
+                </div>
+
+                <div class="col-sm-3 col-sm-offset-1">
+                    <div class="well">
+                        <form role="search" name="search" method="GET" action="http://google.com/search">
+                            <input type="hidden" name="q" value="site:{{ host ~ url() }}">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search..." class="form-control" name="q">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="well">
+                        <h4>Elsewhere</h4>
+                        <ol class="list-unstyled">
+                            {% for link in side_menu %}
+                                <li><a{% if link.target %} target="{{ link.target }}"{% endif %} href="{{ url( link.url ) }}">{{ link.text }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+
+            </div><!-- /.row -->
+
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <div class="well well-sm">
+                            Copyright &copy; {{ "now"|date("Y") }} by {{ author }} &bull; Built with <a href="http://github.com/erickmerchant/wright">Wright</a>
+                    </div>
+
+                    <p class="text-center"><a href="#">Back to top</a></p>
+                </div>
+
+            </div>
+
+        </div><!-- /.container -->
+
+        {% include 'includes/javascripts.twig' %}
+    </body>
+</html>
+{% endspaceless %}

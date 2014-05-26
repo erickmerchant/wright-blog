@@ -1,0 +1,29 @@
+host: http://localhost
+author: Your Name
+banner: Your Site
+sub_banner: A more wordy description
+menu:
+    -
+        text: Home
+        url:
+    -
+        text: Posts
+        url: posts/
+    -
+        text: Tags
+        url: tags/
+side_menu:
+    -
+        text: Github
+        url: '#'
+    -
+        text: Twitter
+        url: '#'
+    -
+        text: Google+
+        url: '#'
+css:
+    - http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css
+js:
+    - http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js
+    - http:///cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js
