@@ -16,6 +16,3 @@
 /404.html:
     data: 404
     template: 404
-/archive/:slug/:
-    data: archive/*
-    template: archived-post
