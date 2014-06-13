@@ -11,7 +11,6 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "erickmerchant/wright": "dev-master",
-        "erusev/parsedown": "~1.0"
+        "erickmerchant/wright": "dev-master"
     }
 }
