@@ -7,11 +7,8 @@ menu:
         text: Home
         url:
     -
-        text: Posts
-        url: posts/
-    -
-        text: Tags
-        url: tags/
+        text: Archives
+        url: archives/
 side_menu:
     -
         text: Github

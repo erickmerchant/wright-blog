@@ -1,15 +1,12 @@
 /:
     data: posts
     template: first-post
-/posts/:
+/archives/:
     data: posts
     template: posts
 /posts/:slug/:
     data: posts/*
     template: post
-/tags/:
-    data: tags
-    template: tags
 /tags/:slug/:
     data: tags/*
     template: tag
