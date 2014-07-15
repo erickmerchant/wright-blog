@@ -3,6 +3,8 @@
     template: first-post
 /archives/:
     data: posts
+    middleware:
+        paginate:
     template: posts
 /posts/:slug/:
     data: posts/*

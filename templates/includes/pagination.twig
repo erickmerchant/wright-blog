@@ -1,0 +1,19 @@
+{% if pagination is defined %}
+    <nav>
+        <ul class="pagination">
+            {% if pagination.first is defined %}
+                <li><a href="{{ url(pagination.first) }}">&laquo;</i></a></li>
+            {% endif %}
+
+            {% if pagination.links is defined and pagination.links|length > 1 %}
+                {% for title, link in pagination.links %}
+                    <li{% if link == pagination.current %} class="active"{% endif %}><a href="{{ url(link) }}">{{ title }}</a></li>
+                {% endfor %}
+            {% endif %}
+
+            {% if pagination.last is defined %}
+                <li><a href="{{ url(pagination.last) }}">&raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}

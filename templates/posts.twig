@@ -3,7 +3,7 @@
 {% block main %}
     <section>
         <h1>{{ page.title }}</h1>
-        {% for year_month, batched_articles in page.collection()|date_batch('published_on', 'F Y') %}
+        {% for year_month, batched_articles in pagination.collection|date_batch('published_on', 'F Y') %}
             <section>
                 <h2><i class="glyphicon glyphicon-calendar"></i> {{ year_month }}</h2>
                 {% for articles in batched_articles %}
@@ -16,5 +16,6 @@
                 {% endfor %}
             </section>
         {% endfor %}
+        {% include 'includes/pagination.twig' %}
     </section>
 {% endblock %}
